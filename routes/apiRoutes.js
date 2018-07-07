@@ -1,8 +1,7 @@
 var db = require('../models');
+var path = require('path');
 
 module.exports = function(app){
-
-
 
   app.get('/saveGuy', function(req, res) {
     db.User.create({username: 'tom', email: 'tom@tom.com'}).then(function(thingWeSaves){
@@ -12,6 +11,6 @@ module.exports = function(app){
   })
 
   app.get('/', function(req, res){
-    res.send('html pages coming soon!!!');
+    res.sendFile(path.join(__dirname, "../public/index.html"));;
   })
 }
