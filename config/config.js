@@ -1,7 +1,9 @@
-{
+require('dotenv').config()
+
+var config = {
   "development": {
     "username": "root",
-    "password": "",
+    "password": process.env.MYSQL_KEY,
     "database": "todolist",
     "host": "127.0.0.1",
     "port": 3306,
@@ -24,3 +26,6 @@
     "dialect": "mysql"
   }
 }
+
+
+module.exports = config;
