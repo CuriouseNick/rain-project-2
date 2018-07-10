@@ -1,0 +1,11 @@
+* {
+  outline: 1px solid red;
+}
+
+html {
+  background-color: grey;
+}
+
+.card {
+  background-color: white;
+}
