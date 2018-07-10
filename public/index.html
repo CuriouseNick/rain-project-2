@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
@@ -12,15 +13,52 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
   <link rel="stylesheet" href="./css/styles.css">
-  
+
   <title>HomeVenience</title>
 
 </head>
+
 <body>
-  <div class="container">
-    <h1>HomeVenience</h1>
+  <div class="container teal lighten-2 z-depth-4">
+    <h1 class="center">HomeVenience</h1>
+
+    <div class="row">
+
+      <div class="col s6" id="chart">
+        <div class="card center z-depth-4">
+          <div class="card-image text-center">
+            <img src="images/tempgauge-placeholder.png">
+          </div>
+          <div class="card-content">
+            <p>Real Time Temperature Placeholder</p>
+          </div>
+          <div class="card-action center">
+            <a class="waves-effect waves-light btn">button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6" id="chart">
+        <div class="card center z-depth-4">
+          <div class="card-image text-center">
+            <img src="images/linechart-placeholder.png">
+          </div>
+          <div class="card-content">
+            <p>Real Time Temperature Placeholder</p>
+          </div>
+          <div class="card-action center">
+            <a class="waves-effect waves-light btn">button</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
+
+
 
   <script src="js/views.js" type="text/javascript"></script>
 </body>
+
 </html>
