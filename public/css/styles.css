@@ -3,9 +3,17 @@
 } */
 
 html {
-  background-color: rgb(237,241,245);
+  background-image: url("../images/smarthomebackground.jpg");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
-.widget {
-  background-color: white;
+.card {
+  opacity: 0.85;
+}
+
+.graph-container {
+  padding: 10px 25px;
 }

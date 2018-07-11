@@ -4,7 +4,7 @@ var config = {
   "development": {
     "username": "root",
     "password": process.env.MYSQL_KEY,
-    "database": "todolist",
+    "database": "rain",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
