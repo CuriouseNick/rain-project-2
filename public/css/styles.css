@@ -1,11 +1,11 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 html {
-  background-color: grey;
+  background-color: rgb(237,241,245);
 }
 
-.card {
+.widget {
   background-color: white;
 }
