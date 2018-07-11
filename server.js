@@ -42,6 +42,7 @@ board.on("ready", function() {
  //Temperature data control block
  temperature.on("change", function() {
  //console.log(this.celsius + "°C", this.fahrenheit + "°F");
+ //temp = this.celsius;
  });
 
   setInterval(publish, 3000);
