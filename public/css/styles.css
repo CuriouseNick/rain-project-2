@@ -1,0 +1,11 @@
+/* * {
+  outline: 1px solid red;
+} */
+
+html {
+  background-color: rgb(237,241,245);
+}
+
+.widget {
+  background-color: white;
+}
