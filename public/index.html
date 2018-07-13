@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
   <link rel="stylesheet" href="./css/styles.css">
 
   <script src="jquery-3.3.1.min.js"></script>
@@ -19,85 +18,96 @@
 
 </head>
 <body>
-  <div class="container">
-    <h1>HomeVenience</h1>
 
-    <div class="row"></div>
-      <div class="col-md-6"></div>
-        <section id="Content">
-          <h2>
-              Temp
-          </h2>
-          <hr />
-         <img class="Image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Annual_Average_Temperature_Map.jpg/300px-Annual_Average_Temperature_Map.jpg">
-          <p>
-              Hello!
-          </p>
-          <p>
-             Temperature Visualization 
-          <p>
-              Set Temp
-          </p>
-          <p>
-              GS framework Arduino will send data and execute data
-          </p>
-          <P>
-              Created by Ismael Salvador Correa 
-          </P>
-      </section>
-      <div class="col-md-6"></div>
-      <section id="Content">
-        <h2>
-            Light 
-        </h2>
-        <hr />
-       <img class="Image" src="https://images.pexels.com/photos/544917/pexels-photo-544917.jpeg?auto=compress&cs=tinysrgb&h=350">
-        <p>
-            On or Off 
-        </p>
-        <p>
-            Arduino 
-        </p>
-        <P>
-            Created by Ismael Salvador Correa 
-        </P>
-    </section>
-    <div class="row"></div>
-  </section>
-  <div class="col-md-6"></div>
-  <section id="Content">
-    <h2>
-        MetaData
-    </h2>
-    <hr />
-   <img class="Image" src="https://www.fws.gov/wetlands/system/images/metadata.png">
-    <p>
-        Arudino Framework from Nicolai will retrieve information from Micro-Chip Processor and Johnny Five
-    </p>
-    <P>
-        Created by Ismael Salvador Correa 
-    </P>
-</section>
-    <div class="row"></div>
-    <div class="col-md-6"></div>
-    <section id="Content">
-        <h2>
-            Average Temp
-        </h2>
-        <hr />
-       <img class="Image" src="https://ourchangingclimate.files.wordpress.com/2010/03/global_temp_yearly_2.png?w=900&h=588">
-        <div>
-            <p>Displays Average Temperature</p>
-            <div>Moving Averge Script Potentially</div>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">HomeVenience</a>
+          <a class="navbar-brand" href="https://www.youtube.com/watch?v=qqUiB-DXy4o">Temperature Microchip</a>
         </div>
-        <P>
-            Created by Ismael Salvador Correa 
-        </P>
-    </section>
-    <div class="col-md-6"></div>
-      <p>Any other type of useful information</p>
-  </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="page-header">
+            <h1></h1>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+                <a href="widget.html">
+                        <img class="image1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Annual_Average_Temperature_Map.jpg/300px-Annual_Average_Temperature_Map.jpg">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    The following link will lead you to the tempeature widget that determines what the temperature is for the room. It will be connected through the aruduino framework. 
+                </p>
+                
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+            <div class="onAndOff">
+              <h1>HomeVenience On and Off Button</h1>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <img src="https://images.pexels.com/photos/544917/pexels-photo-544917.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Placeholder" class="img-thumbnail">
+              </div>
+              <div class="col-md-4">
+                <p>
+                    <button id="on">On</button>
+                    <button id"off">Off</button>
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
 
+      <div class="row">
+        <div class="col-md-6">
+          <div class="metaData">
+            <h1>Metadata</h1>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <img src="https://www.fws.gov/wetlands/system/images/metadata.png" alt="Placeholder" class="img-thumbnail">
+            </div>
+          </div>
+          <div class="row">
+                <div class="col-md-12">
+                  <p>
+                      Arudiuno
+                  </p>
+                </div>
+              </div>
+        </div>
+  
+        <div class="col-md-6">
+            <div class="temperatureRange">
+              <h1>Temperature Range</h1>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <img src="https://ourchangingclimate.files.wordpress.com/2010/03/global_temp_yearly_2.png?w=900&h=588" alt="Placeholder" class="img-thumbnail">
+              </div>
+                
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        Python or EON.js
+                    </p>
+                </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+</body>
   <script src="js/views.js" type="text/javascript"></script>
 </body>
 </html>
