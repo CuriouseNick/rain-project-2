@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  
+  $('.dropdown-trigger').dropdown();
 
   // Temperature graph code goes here
   var pubnub = new PubNub({
@@ -54,6 +56,11 @@ $(document).ready(function(){
         type: 'gauge',
       },
       gauge: {
+        label: {
+          format: function(value, ratio){
+            return value;
+          }
+        },
         min: 0,
         max: 100
       },
@@ -67,7 +74,6 @@ $(document).ready(function(){
   });
 
   setInterval(function(){
-
 
     pubnub.publish({
       channel: 'eon-gauge',

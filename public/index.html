@@ -29,11 +29,49 @@
         <div class="col s6">
           <div class="card white z-depth-4">
             <div class="card-content black-text">
-              <span class="card-title center">Temp Data</span>
+              <span class="card-title center">Pick Temperature Preference</span>
               <hr>
-              <p class="center">High Temp: 76</p>
-              <p class="center">Low Temp: 72</p>
-              <p class="center">Average Temp: 74.5</p>
+
+              <form action="#">
+                <div class="row">
+                  <div class="col s12 center">
+                    <label class="blue-text ac-heat">
+                      <input name="group1" type="radio" checked />
+                      <span>AC</span>
+                    </label>
+
+                    <label class="red-text ac-heat">
+                      <input name="group1" type="radio" />
+                      <span black-text>HEAT</span>
+                    </label>
+                  </div>
+                </div>
+              </form>
+
+              <div class="row dropdown-row">
+                <div class="col s12 center">
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>SELECT TEMP</a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content z-depth-5'>
+                        <li><a href="#!">79</a></li>
+                        <li><a href="#!">80</a></li>
+                        <li><a href="#!">81</a></li>
+                        <li><a href="#!">82</a></li>
+                        <li><a href="#!">83</a></li>
+                        <li><a href="#!">84</a></li>
+                        <li><a href="#!">85</a></li>
+                        <li><a href="#!">86</a></li>
+                        <li><a href="#!">87</a></li>
+                        <li><a href="#!">88</a></li>
+                        <li><a href="#!">89</a></li>
+                        <li><a href="#!">90</a></li>
+                    </ul>
+                </div>
+              </div>
+              
+
             </div>
           </div>
         </div>
@@ -48,7 +86,7 @@
 
       <div class="row graph-container">
         <div class="col s12">
-          <div class="card white z-depth-4">
+          <div class="card my-opacity white z-depth-1">
             <h5>Temperature Graph</h5>
             <div class="center" id="tempGraph">
               <div id="chart"></div>
