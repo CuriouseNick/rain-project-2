@@ -1,22 +1,7 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
+
 var express = require("express");
 var bodyParser = require("body-parser");
 // ******************************************************************************
-/* var pubnub = require('pubnub')({
-  publish_key: 'pub-c-502ba2b2-a64f-41f7-9607-2c6b371f0460',
-  subscribe_key: 'sub-c-fb9f7ab4-83d1-11e8-b9aa-969f058f0c4c'
-}); */
-
-// ******************************************************************************
-// Sets up the Express App
-
-
-// =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
 
@@ -45,3 +30,58 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+
+// johnny five photo resistor
+var five = require("johnny-five"),
+board, photoresistor, temperature, led;
+
+var light;
+var temperature;
+var locTemp;
+
+board = new five.Board();
+
+board.on("ready", function() {
+
+  // Create a new `photoresistor` hardware instance.
+  photoresistor = new five.Sensor({
+    pin: "A2",
+    freq: 250
+  });
+
+  temperature = new five.Thermometer({
+    controller: "LM35",
+    pin: "A0",
+    freq: 250
+  });
+
+  led = new five.Led(10);
+
+
+  // Inject the `sensor` hardware into
+  // the Repl instance's context;
+  // allows direct command line access
+  board.repl.inject({
+    pot: photoresistor
+  });
+
+  // "data" get the current reading from the photoresistor
+  photoresistor.on("data", function() {
+    light = this.value;
+    console.log(light);
+  });
+
+  temperature.on("data", function(){
+    locTemp = this.fahrenheit;
+    console.log(locTemp);
+  });
+});
+
+app.get("/api/temp", function(req, res){
+  res.json({"temperature": locTemp});
+});
+
+app.get("/api/light")
+
+
