@@ -32,13 +32,13 @@ db.sequelize.sync().then(function() {
 });
 
 
-
-
 // johnny five photo resistor
 var five = require("johnny-five"),
-board, photoresistor;
+board, photoresistor, temperature, led;
 
 var light;
+var temperature;
+var locTemp;
 
 board = new five.Board();
 
@@ -49,6 +49,15 @@ board.on("ready", function() {
     pin: "A2",
     freq: 250
   });
+
+  temperature = new five.Thermometer({
+    controller: "LM35",
+    pin: "A0",
+    freq: 250
+  });
+
+  led = new five.Led(10);
+
 
   // Inject the `sensor` hardware into
   // the Repl instance's context;
@@ -62,10 +71,17 @@ board.on("ready", function() {
     light = this.value;
     console.log(light);
   });
+
+  temperature.on("data", function(){
+    locTemp = this.fahrenheit;
+    console.log(locTemp);
+  });
 });
 
 app.get("/api/temp", function(req, res){
-  res.json({"light": light});
+  res.json({"temperature": locTemp});
 });
 
 app.get("/api/light")
+
+

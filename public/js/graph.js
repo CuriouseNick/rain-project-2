@@ -7,6 +7,7 @@ $(document).ready(function(){
   });
 
   var lightObject;
+  var tempObject;
 
   eon.chart({
     channels: ['eon-spline'],
@@ -24,15 +25,19 @@ $(document).ready(function(){
   setInterval(function(){
     $.get("/api/temp", function(data) {
       console.log(data);
-      lightObject = data;
+      tempObject = data;
     });
+
+    if (tempObject.temperature > 84) {
+      console.log("AC IS ON !!!!!");
+    }
 
 
     pubnub.publish({
       channel: 'eon-spline',
       message: {
         eon: {
-          "light": lightObject.light
+          "temperature": tempObject.temperature
         }
       }
     });
@@ -50,7 +55,7 @@ $(document).ready(function(){
       },
       gauge: {
         min: 0,
-        max: 1000
+        max: 100
       },
       color: {
         pattern: ['#FF0000', '#F6C600', '#60B044'],
@@ -68,7 +73,7 @@ $(document).ready(function(){
       channel: 'eon-gauge',
       message: {
         eon: {
-          "light": lightObject.light
+          "temperature": tempObject.temperature
         }
       }
     })
