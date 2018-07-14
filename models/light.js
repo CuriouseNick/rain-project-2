@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = function(sequelize, DataTypes) {
-  const temp = sequelize.define("temp", {
+  const light = sequelize.define("light", {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
@@ -11,10 +11,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATE,
       allowNull: false
     },
-    temperature: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
   });
-  return temp;
+  return light;
 };
