@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
   <!-- Compiled and minified CSS -->
+  <link type="text/css" rel="stylesheet" href="//pubnub.github.io/eon/v/eon/1.0.0/eon.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <!-- <link type="text/css" rel="stylesheet" href="//pubnub.github.io/eon/v/eon/1.0.0/eon.css"/> -->
   <link rel="stylesheet" href="./css/styles.css">
-
-  <script src="jquery-3.3.1.min.js"></script>
-  
   <title>HomeVenience</title>
 
 </head>
@@ -29,56 +29,58 @@
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" id="quadrantOne">
           <div class="page-header">
             <h1></h1>
           </div>
           <div class="row">
             <div class="col-md-8">
-                <a href="widget.html">
+                <h1>Temperature Range</h1>
+                <p>Slide will receive inputs from aruduino framework</p>
+                
+                <div class="slidecontainer">
+                  <input type="range" min="60" max="79" value="72" class="slider" id="myRange">
+                  <p>Value: <span id="demo"></span></p>
+                </div>
+              </div>
+                <!-- <a href="widget.html">
                         <img class="image1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Annual_Average_Temperature_Map.jpg/300px-Annual_Average_Temperature_Map.jpg">
-                </a>
-            </div>
+                </a> -->
             <div class="col-md-4">
-                <p>
+                <!-- <p>
                     The following link will lead you to the tempeature widget that determines what the temperature is for the room. It will be connected through the aruduino framework. 
-                </p>
+                </p> -->
                 
             </div>
           </div>
         </div>
   
-        <div class="col-md-6">
+        <div class="col-md-6" id="quadrantTwo">
             <div class="onAndOff">
               <h1>Room Light</h1>
             </div>
             <div class="row">
-              <div class="col-md-8">
-                <img src="https://images.pexels.com/photos/544917/pexels-photo-544917.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Placeholder" class="img-thumbnail">
-              </div>
-              <div class="row">
-                  <div class="col-md-6" class="AC">
+                  <div class="col-md-10" class="AC">
                         <p>
                             <p>Air Conditioning</p>
-                                <button id="on">On</button>
-                                <button id"off">Off</button>
+                                <button id="onAC">On</button>
+                                <button id="offAC">Off</button>
                         </p>
                   </div>
                   <div class="col-md-6" class"heat">
                         <p>
                             <p>Home Heater</p>
-                                <button id="on">On</button>
-                                <button id"off">Off</button>
+                                <button id="onH">On</button>
+                                <button id="offH">Off</button>
                         </p>
                   </div>
-                </div>
               </div>
             </div>
           </div>
       </div>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" id="quadrantThree">
           <div class="metaData">
             <h1>Metadata</h1>
           </div>
@@ -96,7 +98,7 @@
               </div>
         </div>
   
-        <div class="col-md-6">
+        <div class="col-md-6" id="quandrantFour">
             <div class="temperatureRange">
               <h1>Temperature Range</h1>
             </div>
