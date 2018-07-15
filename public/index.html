@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
   <!-- Compiled and minified CSS -->
-  <link type="text/css" rel="stylesheet" href="//pubnub.github.io/eon/v/eon/1.0.0/eon.css"/>
+  <link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.11/eon.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Compiled and minified JavaScript -->
+  <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.11/eon.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-  <!-- <link type="text/css" rel="stylesheet" href="//pubnub.github.io/eon/v/eon/1.0.0/eon.css"/> -->
   <link rel="stylesheet" href="./css/styles.css">
   <title>HomeVenience</title>
 
@@ -31,7 +30,6 @@
       <div class="row">
         <div class="col-md-6" id="quadrantOne">
           <div class="page-header">
-            <h1></h1>
           </div>
           <div class="row">
             <div class="col-md-8">
@@ -60,19 +58,26 @@
               <h1>Room Light</h1>
             </div>
             <div class="row">
-                  <div class="col-md-10" class="AC">
+                  <div class="col-md-4" class="AC">
                         <p>
                             <p>Air Conditioning</p>
                                 <button id="onAC">On</button>
                                 <button id="offAC">Off</button>
                         </p>
                   </div>
-                  <div class="col-md-6" class"heat">
+                  <div class="col-md-4" class"heat">
                         <p>
                             <p>Home Heater</p>
                                 <button id="onH">On</button>
                                 <button id="offH">Off</button>
                         </p>
+                  </div>
+                  <div class="col-md-4" class"heat">
+                    <p>
+                        <p>Light</p>
+                            <button id="onLight">On</button>
+                            <button id="offLight">Off</button>
+                    </p>
                   </div>
               </div>
             </div>
@@ -84,43 +89,27 @@
           <div class="metaData">
             <h1>Metadata</h1>
           </div>
-          <div class="row">
-            <div class="col-md-12">
+            <div>
               <img src="https://www.fws.gov/wetlands/system/images/metadata.png" alt="Placeholder" class="img-thumbnail">
             </div>
-          </div>
-          <div class="row">
-                <div class="col-md-12">
-                  <p>
-                      Arudiuno
-                  </p>
-                </div>
-              </div>
         </div>
   
-        <div class="col-md-6" id="quandrantFour">
+          <div class="col-md-6" id="quandrantFour">
             <div class="temperatureRange">
               <h1>Temperature Range</h1>
             </div>
-            <div class="row">
-              <div class="col-md-12">
+            <div>
+              <div>
                 <img src="https://ourchangingclimate.files.wordpress.com/2010/03/global_temp_yearly_2.png?w=900&h=588" alt="Placeholder" class="img-thumbnail">
               </div>
-                
-            </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>
-                        Python or EON.js
-                    </p>
-                </div>
             </div>
           </div>
+        </div>
       </div>
 
     </div>
 </body>
   <script src="js/views.js" type="text/javascript"></script>
+  <!-- <script type="text/javascript" src="//pubnub.github.io/eon/v/eon/1.0.0/eon.js"></script> -->
 </body>
 </html>
