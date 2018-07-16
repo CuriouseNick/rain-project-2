@@ -1,6 +1,4 @@
 $(document).ready(function(){
-  
-  $('.dropdown-trigger').dropdown();
 
   // Temperature graph code goes here
   var pubnub = new PubNub({
@@ -10,6 +8,11 @@ $(document).ready(function(){
 
   var lightObject;
   var tempObject;
+  var tempSelection;
+
+  function userTemp() {
+    tempSelection = $("#tempOptions").val();
+  }
 
   eon.chart({
     channels: ['eon-spline'],
@@ -30,8 +33,9 @@ $(document).ready(function(){
       tempObject = data;
     });
 
-    if (tempObject.temperature > 84) {
+    if (tempObject.temperature > tempSelection) {
       console.log("AC IS ON !!!!!");
+
     }
 
 
