@@ -1,15 +1,14 @@
-# rain-project-2# burger-app
-
-# Friend Finder
-
-Make your and name your own burgers then devour them at will!
-
-![alt text](/public/assets/img/burgerapp.png)
+# HomeVenience
 
 
-## App deployed in Heroku
+Realtime data app using arduino mimicking IoT devices
 
-[ https://burgerapp-askim.herokuapp.com/]( https://burgerapp-askim.herokuapp.com/)
+![alt text](/public/images/loginpage.png)
+![alt text](/public/images/mainapp.png)
+
+## App located in Github
+
+[ https://github.com/CuriouseNick/rain-project-2]( https://github.com/CuriouseNick/rain-project-2)
 
 ## Getting Started
 
@@ -26,12 +25,24 @@ npm install
 - Visual Studio Code (Or any other editor)
 - Express.js
 - Node.js
-- Handlebars.js
+- bodyParser
+- sequelize
+- MySQL
+- Ardunio Hardware (Temp sensor, LED light)
+- Johnny Five
+- PubNub
+- Eon
+- Firmata Software
+- Materialize
+- Passport
 
 
 ## Authors
 
 Alex Kim
+Nick Gorguts
+Reece Raethke
+Ismael Correa
 
 ## License
 
