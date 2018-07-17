@@ -31,7 +31,7 @@ app.engine('hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 
 app.get('/', function (req, res) {
-  res.send('Welcome to Passport with Sequelize');
+  res.sendFile(path.join(__dirname, "../public/login.html"));;
 });
 
 //Models
