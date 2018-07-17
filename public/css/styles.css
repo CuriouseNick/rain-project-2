@@ -11,10 +11,31 @@ html {
 }
 
 .card {
-  opacity: 0.85;
-  min-height: 220px;
-}
-
-.graph-container {
+  /* opacity: 0.85; */
+  min-height: 250px;
   padding: 10px 25px;
 }
+
+.my-opacity {
+  opacity: 0.85;
+}
+
+.ac-heat {
+  padding: 20px 20px;
+}
+
+.card {
+  opacity: 0.85;
+}
+
+.dropdown-content {
+  overflow: scroll;
+  height: 150px;
+}
+
+.dropdown-content li {
+  height: 30%;
+  min-height: 15px;
+}
+
+
