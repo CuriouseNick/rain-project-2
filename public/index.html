@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+  
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <script type="text/javascript" src="//pubnub.github.io/eon/v/eon/1.0.0/eon.js"></script>
@@ -29,52 +29,52 @@
         <div class="col s6">
           <div class="card white z-depth-4">
             <div class="card-content black-text">
-              <span class="card-title center">Pick Temperature Preference</span>
+              <span class="card-title center"><strong>Pick Temperature Preference</strong></span>
               <hr>
 
               <form action="#">
                 <div class="row">
                   <div class="col s12 center">
                     <label class="blue-text ac-heat">
-                      <input name="group1" type="radio" checked />
+                      <input name="group1" type="radio" value="ac"/>
                       <span>AC</span>
                     </label>
 
                     <label class="red-text ac-heat">
-                      <input name="group1" type="radio" />
+                      <input name="group1" type="radio" value="heat" />
                       <span black-text>HEAT</span>
                     </label>
                   </div>
                 </div>
               </form>
 
-              <div class="row dropdown-row">
-                <div class="col s12 center">
-                    <!-- Dropdown Trigger -->
-                    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>SELECT TEMP</a>
-
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content z-depth-5'>
-                        <li><a href="#!">79</a></li>
-                        <li><a href="#!">80</a></li>
-                        <li><a href="#!">81</a></li>
-                        <li><a href="#!">82</a></li>
-                        <li><a href="#!">83</a></li>
-                        <li><a href="#!">84</a></li>
-                        <li><a href="#!">85</a></li>
-                        <li><a href="#!">86</a></li>
-                        <li><a href="#!">87</a></li>
-                        <li><a href="#!">88</a></li>
-                        <li><a href="#!">89</a></li>
-                        <li><a href="#!">90</a></li>
-                    </ul>
+              <div class="row">
+                <div class="input-field center-align col s12">
+                  <select id="tempOptions">
+                    <option value="" disabled selected>Temp</option>
+                    <option value=79>79 F</option>
+                    <option value=80>80 F</option>
+                    <option value=81>81 F</option>
+                    <option value=82>82 F</option>
+                    <option value=83>83 F</option>
+                    <option value=84>84 F</option>
+                    <option value=85>85 F</option>
+                    <option value=86>86 F</option>
+                    <option value=87>87 F</option>
+                    <option value=88>88 F</option>
+                    <option value=89>89 F</option>
+                    <option value=90>90 F</option>
+                  </select>
                 </div>
               </div>
-              
+
+              <div id="tempStatus" class="center"></div>
+
 
             </div>
           </div>
         </div>
+
         <div class="col s6">
           <div class="card white z-depth-4">
             <div class="card-content center">
@@ -87,10 +87,21 @@
       <div class="row graph-container">
         <div class="col s12">
           <div class="card my-opacity white z-depth-1">
-            <h5>Temperature Graph</h5>
+            <h5><strong>Temperature Graph</strong></h5>
             <div class="center" id="tempGraph">
               <div id="chart"></div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row light-container">
+        <div class="col s8">
+          <div class="card my-opacity white z-depth-1">
+              <img class="bulb" src="./images/light_bulb_off.png">
+            <img class="bulb" style="display: none" src="./images/light_bulb_on.jpeg">
+            <button class="switchBtnOn switchBtn" value="on">ON</button>
+            <button class="switchBtnOff switchBtn" value="off">OFF</button>
           </div>
         </div>
       </div>

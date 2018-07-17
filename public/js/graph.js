@@ -1,6 +1,4 @@
 $(document).ready(function(){
-  
-  $('.dropdown-trigger').dropdown();
 
   // Temperature graph code goes here
   var pubnub = new PubNub({
@@ -10,6 +8,48 @@ $(document).ready(function(){
 
   var lightObject;
   var tempObject;
+  var tempSelection;
+  var fanChoice; 
+  var currentSwitch = "off";
+
+  $("input[name='group1']").on('change', function() {
+    fanChoice = $("input[name='group1']:checked").val();
+    console.log(fanChoice);
+  });
+  
+
+  $("#tempOptions").on("change", function() {
+    tempSelection = $(tempOptions).val();
+    console.log(tempSelection);
+  });
+
+  $(".switchBtnOn").click(function(){
+    if (currentSwitch == "on") {
+      console.log("switch is already on");
+    } else if (currentSwitch == "off") {
+      $(".bulb").toggle();
+      currentSwitch = $(this).val();
+      console.log(currentSwitch);
+    }
+  
+    lightObject = {
+      lightStatus: "on"
+    }
+
+    $.post("/api/dataLight", lightObject, function(data) {
+      console.log(data);
+    });
+  });
+
+  $(".switchBtnOff").click(function(){
+    if (currentSwitch == "off") {
+      console.log("switch is already off");
+    } else if (currentSwitch == "on") {
+      $(".bulb").toggle();
+      currentSwitch = $(this).val();
+      console.log(currentSwitch);
+    }
+  });
 
   eon.chart({
     channels: ['eon-spline'],
@@ -30,8 +70,14 @@ $(document).ready(function(){
       tempObject = data;
     });
 
-    if (tempObject.temperature > 84) {
-      console.log("AC IS ON !!!!!");
+    if (tempObject.temperature > tempSelection && fanChoice == "ac") {
+      $("#tempStatus").text("AC is on");
+    } else if (tempObject.temperature <= tempSelection && tempSelection != undefined && fanChoice == "ac") {
+        $("#tempStatus").text("Temperature set at " + tempSelection + " F");
+    } else if (tempObject.temperature < tempSelection && fanChoice == "heat") {
+      $("#tempStatus").text("Heat is on");
+    } else if (tempObject.temperature >= tempSelection && tempSelection != undefined && fanChoice == "heat") {
+      $("#tempStatus").text("Temperature set at " + tempSelection + " F");
     }
 
 

@@ -30,7 +30,7 @@ app.set('views', './auth/views')
 app.engine('hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 
-app.get('/', function (req, res) {
+app.get('/home', function (req, res) {
   res.send('Welcome to Passport with Sequelize');
 });
 
@@ -57,10 +57,13 @@ models.sequelize.sync().then(function () {
   console.log(err, "Something went wrong with the Database Update!")
 });
 
+
+require('./app.js')(app);
+
 app.listen(8080, function (err) {
   if (!err)
     console.log("Site is live"); else console.log(err)
 
 });
 
-require('./app.js')(app);
+
