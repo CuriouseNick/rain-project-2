@@ -49,6 +49,14 @@ $(document).ready(function(){
       currentSwitch = $(this).val();
       console.log(currentSwitch);
     }
+
+    lightObject = {
+      lightStatus: "off"
+    }
+
+    $.post("/api/dataLight", lightObject, function(data) {
+      console.log(data);
+    });
   });
 
   eon.chart({
