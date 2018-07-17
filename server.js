@@ -30,9 +30,8 @@ app.set('views', './auth/views')
 app.engine('hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 
-app.get('/home', function (req, res) {
-  res.send('Welcome to Passport with Sequelize');
-});
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, "../public/login.html"));;
 
 //Models
 var models = require("./models");
