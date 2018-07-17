@@ -12,10 +12,10 @@ module.exports = function(app){
   board.on("ready", function() {
 
     // Create a new `photoresistor` hardware instance.
-    photoresistor = new five.Sensor({
+  /*   photoresistor = new five.Sensor({
       pin: "A2",
       freq: 250
-    });
+    }); */
 
     temperature = new five.Thermometer({
       controller: "LM35",
@@ -29,23 +29,34 @@ module.exports = function(app){
       led: led
     });
 
+    
+
     app.post("/api/dataLight", function(req, res) {
       console.log(req.body.lightStatus);
+
+      light = req.body.lightStatus;
+
+      if (light == "on") {
+        led.on();
+      } else if (light == "off") {
+        led.off();
+      }
     });
 
+    
 
     // Inject the `sensor` hardware into
     // the Repl instance's context;
     // allows direct command line access
-    board.repl.inject({
+    /* board.repl.inject({
       pot: photoresistor
-    });
+    }); */
 
     // "data" get the current reading from the photoresistor
-    photoresistor.on("data", function() {
+   /*  photoresistor.on("data", function() {
       light = this.value;
       console.log(light);
-    });
+    }); */
 
     temperature.on("data", function(){
       locTemp = this.fahrenheit;
@@ -57,8 +68,8 @@ module.exports = function(app){
     res.json({"temperature": locTemp});
   });
 
-  app.get("/api/light", function(req, res) {
+/*   app.get("/api/light", function(req, res) {
     res.json({"light": light});
-  });
+  }); */
 }
 

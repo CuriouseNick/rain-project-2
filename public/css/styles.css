@@ -10,6 +10,9 @@ html {
   height: 100vh;
 }
 
+h3 {
+  margin-top: 0;
+}
 .card {
   min-height: 320px;
   padding: 10px 25px;
@@ -46,4 +49,16 @@ select {
   font-weight: bold;
   font-size: 16px;
   color: blue;
+}
+
+.switchBtn {
+  padding: 5px 25px;
+  border: 1px solid black;
+  background-color: rgb(100, 241, 121);
+}
+
+.header {
+  background-color: rgb(41, 178, 169);
+  font-weight: bold;
+  margin-top: 0;
 }

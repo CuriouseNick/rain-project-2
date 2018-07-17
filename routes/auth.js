@@ -14,8 +14,8 @@ app.post('/signup', passport.authenticate('local-signup',  { successRedirect: '/
 
 
 app.get('/dashboard',isLoggedIn, function(req, res) {
-    console.log('helloo!!!')
-    res.send('WE HIT DASHBOADDD')
+    console.log('helloo!!!');
+    res.send('WE HIT DASHBOADDD');
 });
 
 
