@@ -4,15 +4,14 @@
 
 html {
   background-image: url("../images/smarthomebackground.jpg");
-  background-repeat: no-repeat, repeat;
+  background-repeat:  repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;
 }
 
 .card {
-  /* opacity: 0.85; */
-  min-height: 300px;
+  min-height: 320px;
   padding: 10px 25px;
 }
 
@@ -41,4 +40,10 @@ select {
   border: 2px solid black;
   width: 120px;
   margin: 0 auto;
+}
+
+#tempStatus {
+  font-weight: bold;
+  font-size: 16px;
+  color: blue;
 }
