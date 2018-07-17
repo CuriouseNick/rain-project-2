@@ -32,7 +32,6 @@ app.set('view engine', '.hbs');
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, "../public/login.html"));;
-});
 
 //Models
 var models = require("./models");
@@ -57,10 +56,13 @@ models.sequelize.sync().then(function () {
   console.log(err, "Something went wrong with the Database Update!")
 });
 
+
+require('./app.js')(app);
+
 app.listen(8080, function (err) {
   if (!err)
     console.log("Site is live"); else console.log(err)
 
 });
 
-require('./app.js')(app);
+

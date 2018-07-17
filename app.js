@@ -23,7 +23,15 @@ module.exports = function(app){
       freq: 250
     });
 
-    led = new five.Led(10);
+    var led = new five.Led(10);
+    
+    this.repl.inject({
+      led: led
+    });
+
+    app.post("/api/dataLight", function(req, res) {
+      console.log(req.body.lightStatus);
+    });
 
 
     // Inject the `sensor` hardware into
